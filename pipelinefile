@@ -3,7 +3,6 @@ agent any
 tools {
   terraform 'terraform'
 }
-options { ansiColor('xterm') } 
  stages { 
    stage ('Checkout Repo') { 
      steps { 
