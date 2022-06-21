@@ -1,3 +1,0 @@
-testando
-testando mudança
-entendendo
