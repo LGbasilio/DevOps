@@ -48,8 +48,7 @@ stage ('Terraform version') {
         post { 
         always { 
             cleanWs()
-         }
-        }
+                }
        }
   }
 }
