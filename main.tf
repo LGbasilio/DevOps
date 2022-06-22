@@ -10,7 +10,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
 resource "google_storage_bucket" "default" {
-  name          = "tfstate-loyal-road-353919"
+  name          = "tfstate-loyal-road-353919-tfstate"
   force_destroy = false
   location      = "US"
   storage_class = "STANDARD"
