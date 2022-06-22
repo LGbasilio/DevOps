@@ -1,7 +1,7 @@
+depends_on = [google_storage_bucket.bucket_buckettfstat]
 terraform {
   backend "gcs" {
-    bucket  = "qwiklabs-gcp-00-90b1203a84f4"
+    bucket  = "tfstate-loyal-road-353919-tfstate"
     prefix  = "terraform/state"
 	  }
-depends_on = [google_storage_bucket.bucket_buckettfstat]
 }
