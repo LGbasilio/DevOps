@@ -24,7 +24,6 @@ resource "google_storage_bucket" "default" {
   storage_class = "STANDARD"
   versioning {
     enabled = true
-    credentials = "loyal-road-353919-27ba2e9f8be1.json"
-  }
+      }
 }
 
