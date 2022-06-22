@@ -8,10 +8,11 @@ resource "google_compute_instance" "vm_instance" {
       image = "debian-cloud/debian-11"
     }
   }
-  
+
   resource "google_storage_bucket" "bucket-for-tfstate" {
   name        = "tfstate-loyal-road-353919"
   location    = "US"
+  credentials = "loyal-road-353919-27ba2e9f8be1.json"
   uniform_bucket_level_access = true
 }
 
