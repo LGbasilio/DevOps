@@ -17,13 +17,13 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 resource "google_storage_bucket" "bucket-for-tfstate" {
-  name        = "loyal-road-353919"
+  name        = "tfstate-loyal-road-353919"
   location    = "US"
   uniform_bucket_level_access = true
 }
 terraform {
   backend "gcs" {
-    bucket  = "loyal-road-353919"
+    bucket  = "tfstate-loyal-road-353919"
     prefix  = "terraform/state"
       }
 }
