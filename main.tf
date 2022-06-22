@@ -15,6 +15,12 @@ resource "google_compute_instance" "vm_instance" {
   credentials = "loyal-road-353919-27ba2e9f8be1.json"
   uniform_bucket_level_access = true
 }
+terraform {
+  backend "gcs" {
+    bucket  = "tfstate-loyal-road-353919"
+    prefix  = "terraform/state"
+      }
+}
 
   network_interface {
     # A default network is created for all GCP projects
@@ -22,12 +28,5 @@ resource "google_compute_instance" "vm_instance" {
     access_config {
     }
   }
-}
-
-terraform {
-  backend "gcs" {
-    bucket  = "tfstate-loyal-road-353919"
-    prefix  = "terraform/state"
-      }
 }
 
