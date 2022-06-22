@@ -8,6 +8,12 @@ resource "google_compute_instance" "vm_instance" {
       image = "debian-cloud/debian-11"
     }
   }
+  
+  resource "google_storage_bucket" "bucket-for-tfstate" {
+  name        = "tfstate-loyal-road-353919"
+  location    = "US"
+  uniform_bucket_level_access = true
+}
 
   network_interface {
     # A default network is created for all GCP projects
@@ -16,11 +22,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
-resource "google_storage_bucket" "bucket-for-tfstate" {
-  name        = "tfstate-loyal-road-353919"
-  location    = "US"
-  uniform_bucket_level_access = true
-}
+
 terraform {
   backend "gcs" {
     bucket  = "tfstate-loyal-road-353919"
