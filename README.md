@@ -43,31 +43,10 @@ c. Clicar em webhooks > add webhooks.
 d. Em payload, insira a url completa do jenkins adicionando no final "/github-webhook/" ex utilizado: "http://34.125.192.189:8080/github-webhook/" 
 e em "Content type" selecione "application/json", deixe "secret" em branco.
 e. Escolha a opção "Let me select individual events." selecione "Pull requests", "push" e "active" depois clique em "add webhook"
-f. Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok".
-na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "Git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git", selecione a credential cadastrada anteriormente.
-g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
-```
-**Pronto! Seu Jenkins está integrado ao git.**
-
-**4 - Startando uma trigger no jenkins para testes:**
-```
-a. Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
-b. Clique em Save.
-c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todas as etapas executadas e no final terá a saída do comando "ps -ef"
-
-```
-**5 - Configurando Terraform no Jenkins:**
-
-Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
-
-Depois gerir jenkins novamente > Global tools configuration > add terraform > setar um nome de sua preferência > tirar a flag de atualizações automáticas >
-install directory digitar "/usr/bin" > save
-
-
-Inserir o script de pipeline:
-
-Terraform APPLY script Jenkins
-```
+f. Volte ao Jenkins e clique em "new item" > digite um nome e selecione "pipeline"  e clique em "ok".
+na tela seguinte selecione a aba  "general" > marque a checkbox "Git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git".
+g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling".
+h. Em definetion, selecione pipeline script e insira o script de criação da infra:
 
 pipeline {
     agent any
@@ -104,7 +83,18 @@ pipeline {
 
     
 }
+
 ```
+**Pronto! Seu Jenkins está integrado ao git.**
+
+**5 - Instalando o plugin Terraform no Jenkins:**
+
+Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
+
+Depois gerir jenkins novamente > Global tools configuration > add terraform > setar um nome de sua preferência > tirar a flag de atualizações automáticas >
+install directory digitar "/usr/bin" > save
+
+
 Terraform DESTROY script Jenkins
 
 ```
