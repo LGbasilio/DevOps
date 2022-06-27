@@ -47,7 +47,7 @@ f. Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freesty
 na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git".
 g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
 ```
-**Pronto! Seu repositório está integrado ao git.**
+**Pronto! Seu Jenkins está integrado ao git.**
 
 **4 - Startando uma trigger no jenkins para testes:**
 ```
