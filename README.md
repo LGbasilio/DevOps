@@ -13,12 +13,12 @@ A imagem acima mostra o processo de criação da infraestrutura (vm + bucket) at
 3 - Conta no Google Cloud Platform.
 ```
 
-**Configurando o projeto GitHub:**
+**1 - Configurando o projeto GitHub:**
 
 No seu perfil do GitHub, navegue até "settings", escolha "developer settings", depois "personal access token" e clique em "create access token" 
 Anote esse token, ele será usado mais para frente.
 
-**Configurar o git na máquina que o Jenkins está instalado:**
+**2 - Configurar o git na máquina que o Jenkins está instalado:**
 
 ```
 git config --global user.name "Seu nome sem aspas"
@@ -32,7 +32,7 @@ o console irá pedir seu usuário e senha.
 
 ```
 
-**Integrar o Jenkins ao GitHub:**
+**3 - Integrar o Jenkins ao GitHub:**
 ```
 Antes de tudo, você terá que inserir as credentials criadas na etapa anterior.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
@@ -49,14 +49,14 @@ g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm pollin
 ```
 **Pronto! Seu repositório está integrado ao git.**
 
-**Startando uma trigger no jenkins para testes:**
+**4 - Startando uma trigger no jenkins para testes:**
 ```
 a. Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
 b. Clique em Save.
 c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todos os passos executados e no final terá a saída do comando "ps -ef"
 
 ```
-**Configurando Terraform no Jenkins:**
+**5 - Configurando Terraform no Jenkins:**
 
 Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
 
