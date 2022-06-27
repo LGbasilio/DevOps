@@ -13,7 +13,7 @@ A imagem acima mostra o fluxograma de criação da infraestrutura (vm + bucket) 
 3 - Conta no Google Cloud Platform.
 ```
 
-**1 - Configurando o projeto GitHub:**
+**1 - Configurando o GitHub:**
 
 No seu perfil do GitHub, navegue até "settings", escolha "developer settings", depois "personal access token" e clique em "create access token" 
 Anote esse token, ele será usado mais para frente.
