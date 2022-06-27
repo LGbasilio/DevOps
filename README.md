@@ -1,22 +1,22 @@
 # DevOps
 
-**Nesse tutorial, irei mostrar como criar uma pipeline no jenkins para iniciar o job de criação da infraestrutura na Google Cloud Platform usando terraform e salvando o arquivo tfstat em um bucket. 
+**Nesse tutorial, irei mostrar como criar uma pipeline no jenkins para iniciar o job de criação da infraestrutura na Google Cloud Platform usando terraform e salvando o arquivo tfstat em um bucket.**
 
 
 ![infra](https://user-images.githubusercontent.com/97743829/175945901-dcb02abf-c3cf-41e3-8ba4-d66d4d7ebfb4.JPG)
 A imagem acima mostra o processo de criação da infraestrutura (vm + bucket) através do job Terraform_pipeline e também sua remoção através do job Terraform_destroy (exceto o bucket).
 
-**Requisitos:
+**Requisitos:**
 - 1 - Host com VSCode + GitBash instalado.
 - 2 - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
 - 3 - Conta no Google Cloud Platform.
 
-**Configurando o projeto GitHub:
+**Configurando o projeto GitHub:**
 
 No seu perfil do GitHub, navegue até "settings", escolha "developer settings", depois "personal access token" e clique em "create access token" 
 Anote esse token, ele será usado mais para frente.
 
-**Configurar o git na máquina que o Jenkins está instalado:
+**Configurar o git na máquina que o Jenkins está instalado:**
 
 ```
 git config --global user.name "Seu nome sem aspas"
@@ -30,8 +30,7 @@ o console irá pedir seu usuário e senha.
 
 ```
 
-
-**Integrar o Jenkins ao GitHub:
+**Integrar o Jenkins ao GitHub:**
 
 Antes de tudo, você terá que inserir as credentials criadas na etapa anteriro.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
@@ -48,13 +47,13 @@ na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "
 
 * Pronto! Seu repositório está integrado ao git.
 
-**Startando uma trigger no jenkins para testes:
+**Startando uma trigger no jenkins para testes:**
 
 - a. Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
 - b. Clique em Save.
 - c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todos os passos executados e no final terá a saída do comando "ps -ef"
 
-**Configurando Terraform no Jenkins:
+**Configurando Terraform no Jenkins:**
 
 Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
 
