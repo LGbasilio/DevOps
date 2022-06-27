@@ -32,7 +32,7 @@ o console irá pedir seu usuário e senha.
 
 ```
 
-**3 - Integrar o Jenkins ao GitHub:**
+**3 - Integrar o Jenkins com o GitHub:**
 ```
 Antes de tudo, você terá que inserir as credentials criadas na etapa anterior.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
@@ -44,7 +44,7 @@ d. Em payload, insira a url completa do jenkins adicionando no final "/github-we
 e em "Content type" selecione "application/json", deixe "secret" em branco.
 e. Escolha a opção "Let me select individual events." selecione "Pull requests", "push" e "active" depois clique em "add webhook"
 f. Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok".
-na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git".
+na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "Git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git", selecione a credential cadastrada anteriormente.
 g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
 ```
 **Pronto! Seu Jenkins está integrado ao git.**
@@ -53,7 +53,7 @@ g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm pollin
 ```
 a. Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
 b. Clique em Save.
-c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todos os passos executados e no final terá a saída do comando "ps -ef"
+c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todas as etapas executadas e no final terá a saída do comando "ps -ef"
 
 ```
 **5 - Configurando Terraform no Jenkins:**
@@ -77,7 +77,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: '856172ba-cb78-43c1-aa97-b776cd557998', url: 'https://github.com/LGbasilio/DevOps.git'
+                git branch: 'main', credentialsId: 'inserir sua credencial ID aqui', url: 'inserir seu projeto.git'
             }
         }
         stage('Criação do Bucket') {
@@ -118,7 +118,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: '856172ba-cb78-43c1-aa97-b776cd557998', url: 'https://github.com/LGbasilio/DevOps.git'
+                git branch: 'main', credentialsId: 'inserir sua credencial ID aqui', url: 'inserir seu projeto.git'
             }
         }
         stage('terraform format init') {
