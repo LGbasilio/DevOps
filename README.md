@@ -8,9 +8,9 @@ A imagem acima mostra o processo de criação da infraestrutura (vm + bucket) at
 
 **Requisitos:**
 ```
-**- 1** - Host com VSCode + GitBash instalado.
-**- 2** - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
-**- 3** - Conta no Google Cloud Platform.
+1 - Host com VSCode + GitBash instalado.
+2 - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
+3 - Conta no Google Cloud Platform.
 ```
 
 **Configurando o projeto GitHub:**
@@ -37,24 +37,25 @@ o console irá pedir seu usuário e senha.
 Antes de tudo, você terá que inserir as credentials criadas na etapa anterior.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
 
-**- a.** Ir ao seu repositório no GitHub que quer integrar.
-**- b.** Clicar em Settings.
-**- c.** Clicar em webhooks > add webhooks.
-**- d.** Em payload, insira a url completa do jenkins adicionando no final "/github-webhook/" ex utilizado: "http://34.125.192.189:8080/github-webhook/" 
+a. Ir ao seu repositório no GitHub que quer integrar.
+b. Clicar em Settings.
+c. Clicar em webhooks > add webhooks.
+d. Em payload, insira a url completa do jenkins adicionando no final "/github-webhook/" ex utilizado: "http://34.125.192.189:8080/github-webhook/" 
 e em "Content type" selecione "application/json", deixe "secret" em branco.
-**- e.** Escolha a opção "Let me select individual events." selecione "Pull requests", "push" e "active" depois clique em "add webhook"
-**- f.** Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok".
+e. Escolha a opção "Let me select individual events." selecione "Pull requests", "push" e "active" depois clique em "add webhook"
+f. Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok".
 na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git".
-**- g.** Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
+g. Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
 ```
 **Pronto! Seu repositório está integrado ao git.**
 
 **Startando uma trigger no jenkins para testes:**
+```
+a. Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
+b. Clique em Save.
+c. Clique em build, se tiver tudo certo o Jenkins ira mostrar todos os passos executados e no final terá a saída do comando "ps -ef"
 
-**- a.** Clique na aba "Build Env" mude "Add build step" para "Execute shell" digite algum comando do bash, ex: "ps -ef".
-**- b.** Clique em Save.
-**- c.** Clique em build, se tiver tudo certo o Jenkins ira mostrar todos os passos executados e no final terá a saída do comando "ps -ef"
-
+```
 **Configurando Terraform no Jenkins:**
 
 Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
