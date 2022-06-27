@@ -1,6 +1,6 @@
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name         = "terraform"
   machine_type = "f1-micro"
   zone         = "us-west4-b"
 
