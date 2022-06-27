@@ -10,7 +10,7 @@ A imagem acima mostra o fluxograma de criação da infraestrutura (vm + bucket) 
 ```
 1 - Host com VSCode + GitBash instalado.
 2 - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
-3 - Conta no Google Cloud Platform.
+3 - Conta no Google Cloud Platform e arquivo de credentials no formato .json
 ```
 
 **1 - Configurando o GitHub:**
@@ -136,6 +136,11 @@ pipeline {
     
 }
 ```
+** A partir desse momento a pipiline já está configurada e pronta para uso**
+
+Vamos configurar agora o VSCode para mandar o pull para o github e startar o job da pipeline para criação da infraestrutura.
+
+**6 - Integrando o VScode ao GitHub:**
 
 
 
