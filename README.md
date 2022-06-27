@@ -8,7 +8,7 @@ A imagem acima mostra o fluxograma de criação da infraestrutura (vm + bucket) 
 
 **Requisitos:**
 ```
-1 - Host com VSCode + GitBash instalado.
+1 - Host com VSCode, GitBash instalado, conta no Github, repositório com os arquivos principais do terraform (main.tf, vm.tf, etc..)
 2 - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
 3 - Conta no Google Cloud Platform e arquivo de credentials no formato .json
 ```
