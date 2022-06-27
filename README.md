@@ -57,7 +57,7 @@ install directory digitar "/usr/bin" > save
 Inserir o script de pipeline:
 
 Terraform APPLY script Jenkins
-'''
+```
 
 pipeline {
     agent any
@@ -94,10 +94,10 @@ pipeline {
 
     
 }
-'''
+```
 Terraform DESTROY script Jenkins
 
-'''
+```
 
 
 pipeline {
@@ -135,7 +135,7 @@ pipeline {
 
     
 }
-'''
+```
 
 
 
