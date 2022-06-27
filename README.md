@@ -7,6 +7,7 @@
 A imagem acima mostra o processo de criação da infraestrutura (vm + bucket) através do job Terraform_pipeline e também sua remoção através do job Terraform_destroy (exceto o bucket).
 
 **Requisitos:**
+
 **- 1** - Host com VSCode + GitBash instalado.
 **- 2** - VM ou Servidor com o terraform + Jenkins + Git instalados (aqui usei uma VM com Debian 11 hospedado na própria GCP).
 **- 3** - Conta no Google Cloud Platform.
@@ -32,20 +33,20 @@ o console irá pedir seu usuário e senha.
 
 **Integrar o Jenkins ao GitHub:**
 
-Antes de tudo, você terá que inserir as credentials criadas na etapa anteriro.
+Antes de tudo, você terá que inserir as credentials criadas na etapa anterior.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
 
 **- a.** Ir ao seu repositório no GitHub que quer integrar.
-**- b.** Clicar em Settings
-**- c.** Clicar em webhooks > add webhooks
+**- b.** Clicar em Settings.
+**- c.** Clicar em webhooks > add webhooks.
 **- d.** Em payload, insira a url completa do jenkins adicionando no final "/github-webhook/" ex utilizado: "http://34.125.192.189:8080/github-webhook/" 
 e em "Content type" selecione "application/json", deixe "secret" em branco.
 **- e.** Escolha a opção "Let me select individual events." selecione "Pull requests", "push" e "active" depois clique em "add webhook"
-**- f.** Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok"
-na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git"
-**- g.** Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main"
+**- f.** Volte ao Jenkins e clique em "new item" > digite um nome e selecione "freestyle project"  e clique em "ok".
+na tela seguinte selecione a aba  "Source Code Management" > marque a checkbox "git" e cole o código copiado do repositório ex: "https://github.com/LGbasilio/DevOps.git".
+**- g.** Clique em "Build Triggers" e selecione "GitHub hook trigger for GITScm polling" e em "Branch Specifier (blank for 'any')" mudar de "master" para "main".
 
-* Pronto! Seu repositório está integrado ao git.
+**Pronto! Seu repositório está integrado ao git.**
 
 **Startando uma trigger no jenkins para testes:**
 
