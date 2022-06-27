@@ -1,6 +1,6 @@
 # DevOps
 
-**Nesse tutorial, irei mostrar como criar pipelines no jenkins para iniciar o job de criação da infraestrutura na Google Cloud Platform usando terraform e salvando o arquivo tfstat em um bucket.**
+**Nesse tutorial, irei mostrar como criar pipelines no jenkins para iniciar o job de criação e destruição da infraestrutura na Google Cloud Platform usando terraform e salvando o arquivo tfstat em um bucket.**
 
 ![infra](https://user-images.githubusercontent.com/97743829/176010879-a79a2c30-7071-402d-8710-a78b4b89b5d7.JPG)
 
