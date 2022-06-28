@@ -112,7 +112,7 @@ A partir desse momento, quando você fizer um pull editando algum arquivo do rep
 Vá até o git > crie um novo repositório e digite um nome (ex: terraform_destroy), suba todos os arquivos do repositório usado no "terraform_pipeline" e copie o o link do seu projeto (ex: https://github.com/LGbasilio/terraform_destroy.git). 
 
 Navegue até o dashboard do Jenkins e selecione "novo item" > digite um nome de sua preferência (ex terraform_destroy) clique em pipeline e no campo "copy from" selecione "terraform_pipeline" a que já foi criada antes só para clone, clique em save.
-Clique na pipeline criada "terraform_destroy" selecione "configurar", no campo "GitHub project" mude o nome do projeto para o projeto do terraform_destroy que voc~e criou no github (ex https://github.com/LGbasilio/terraform_destroy.git), selecione "GitHub hook trigger for GITScm polling" no campo "pipeline script" copie e cole o script abaixo e clique em save.
+Clique na pipeline criada "terraform_destroy" selecione "configurar", no campo "GitHub project" mude o nome do projeto para o projeto do terraform_destroy que você criou no github (ex https://github.com/LGbasilio/terraform_destroy.git), selecione "GitHub hook trigger for GITScm polling" no campo "pipeline script" copie e cole o script abaixo e clique em save.
 
 ```
 pipeline {
