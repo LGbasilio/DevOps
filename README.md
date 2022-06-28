@@ -33,6 +33,7 @@ o console irá pedir seu usuário e senha.
 ```
 
 **3 - Integrar o Jenkins com o GitHub:**
+
 ```
 Antes de tudo, você terá que inserir as credentials criadas na etapa anterior.
 Ir até o Jenkins > Projeto > add credentials > colocar seu username do GIT e o token de acesso criado anteriormente.
@@ -85,9 +86,10 @@ pipeline {
 }
 
 ```
+
 **Pronto! Seu Jenkins está integrado ao git.**
 
-**5 - Instalando o plugin Terraform no Jenkins:**
+**4 - Instalando o plugin Terraform no Jenkins:**
 
 Na página inicial clicar em gerir Jenkins > plugin > procurar teraform > clicar em instalar.
 
@@ -95,18 +97,18 @@ Depois gerir jenkins novamente > Global tools configuration > add terraform > se
 install directory digitar "/usr/bin" > save
 
 
-```
 **A partir desse momento a pipiline já está configurada e pronta para uso**
 
 Vamos configurar agora o VSCode para mandar o pull para o github e startar o job da pipeline para criação da infraestrutura.
 
-**6 - Integrando o VScode ao GitHub:**
+**5 - Integrando o VScode ao GitHub:**
 
 Abra o vscode e pressione as teclas "ctrl+shift+P", selecione a opção clonar do git, insira suas credenciais e pronto!
 
 A partir desse momento, quando você fizer um pull editando algum arquivo do repositório o Jenkins irá startar a pipeline do terraform.
 
-**7 - Por fim, vamos configurar a pipeline do terraform destroy**
+**6 - Por fim, vamos configurar a pipeline do terraform destroy**
+
 ```
 Vá até o git > crie um novo repositório e digite um nome (ex: terraform_destroy), suba todos os arquivos do repositório usado no "terraform_pipeline" e copie o o link do seu projeto (ex: https://github.com/LGbasilio/terraform_destroy.git). 
 
@@ -150,9 +152,6 @@ pipeline {
     
 }
 ```
-
-
-
 
 **Pronto! a pipeline terraform destroy foi criada com êxito, a partir do momento que o VScode receber um pull desse projeto "terraform_destroy" o jenkins irá startar a pipeline que destruirá toda infraestrutura criada!** 
 
