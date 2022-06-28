@@ -107,7 +107,7 @@ Abra o vscode e pressione as teclas "ctrl+shift+P", selecione a opção clonar d
 A partir desse momento, quando você fizer um pull editando algum arquivo do repositório o Jenkins irá startar a pipeline do terraform.
 
 **7 - Por fim, vamos configurar a pipeline do terraform destroy**
-
+```
 Vá até o git > crie um novo repositório e digite um nome (ex: terraform_destroy), suba todos os arquivos do repositório usado no "terraform_pipeline" e copie o o link do seu projeto (ex: https://github.com/LGbasilio/terraform_destroy.git). 
 
 Navegue até o dashboard do Jenkins e selecione "novo item" > digite um nome de sua preferência (ex terraform_destroy) clique em pipeline e no campo "copy from" selecione "terraform_pipeline" a que já foi criada antes só para clone, clique em save.
