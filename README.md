@@ -95,11 +95,25 @@ Depois gerir jenkins novamente > Global tools configuration > add terraform > se
 install directory digitar "/usr/bin" > save
 
 
-Terraform DESTROY script Jenkins
+```
+**A partir desse momento a pipiline já está configurada e pronta para uso**
+
+Vamos configurar agora o VSCode para mandar o pull para o github e startar o job da pipeline para criação da infraestrutura.
+
+**6 - Integrando o VScode ao GitHub:**
+
+Abra o vscode e pressione as teclas "ctrl+shift+P", selecione a opção clonar do git, insira suas credenciais e pronto!
+
+A partir desse momento, quando você fizer um pull editando algum arquivo do repositório o Jenkins irá startar a pipeline do terraform.
+
+**7 - Por fim, vamos configurar a pipeline do terraform destroy**
+
+Vá até o git > crie um novo repositório e digite um nome (ex: terraform_destroy), suba todos os arquivos do repositório usado no "terraform_pipeline" e copie o o link do seu projeto (ex: https://github.com/LGbasilio/terraform_destroy.git). 
+
+Navegue até o dashboard do Jenkins e selecione "novo item" > digite um nome de sua preferência (ex terraform_destroy) clique em pipeline e no campo "copy from" selecione "terraform_pipeline" a que já foi criada antes só para clone, clique em save.
+Clique na pipeline criada "terraform_destroy" selecione "configurar", no campo "GitHub project" mude o nome do projeto para o projeto do terraform_destroy que voc~e criou no github (ex https://github.com/LGbasilio/terraform_destroy.git), selecione "GitHub hook trigger for GITScm polling" no campo "pipeline script" copie e cole o script abaixo e clique em save.
 
 ```
-
-
 pipeline {
     agent any
     tools {
@@ -135,18 +149,8 @@ pipeline {
 
     
 }
-```
-**A partir desse momento a pipiline já está configurada e pronta para uso**
 
-Vamos configurar agora o VSCode para mandar o pull para o github e startar o job da pipeline para criação da infraestrutura.
-
-**6 - Integrando o VScode ao GitHub:**
-
-Abra o vscode e pressione as teclas "ctrl+shift+P", selecione a opção clonar do git, insira suas credenciais e pronto!
-
-A partir desse momento, quando você fizer um pull editando algum arquivo do repositório o Jenkins irá startar a pipeline do terraform.
-
-
+**Pronto! a pipeline terraform destroy foi criada com êxito, a partir do momento que o VScode receber um pull desse projeto "terraform_destroy" o jenkins irá startar a pipeline que destruirá toda infraestrutura criada!** 
 
 
 
