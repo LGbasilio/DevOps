@@ -150,6 +150,10 @@ pipeline {
     
 }
 ```
+
+
+
+
 **Pronto! a pipeline terraform destroy foi criada com êxito, a partir do momento que o VScode receber um pull desse projeto "terraform_destroy" o jenkins irá startar a pipeline que destruirá toda infraestrutura criada!** 
 
 
