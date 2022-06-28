@@ -136,11 +136,17 @@ pipeline {
     
 }
 ```
-** A partir desse momento a pipiline já está configurada e pronta para uso**
+**A partir desse momento a pipiline já está configurada e pronta para uso**
 
 Vamos configurar agora o VSCode para mandar o pull para o github e startar o job da pipeline para criação da infraestrutura.
 
 **6 - Integrando o VScode ao GitHub:**
+
+Abra o vscode e pressione as teclas "ctrl+shift+P", selecione a opção clonar do git, insira suas credenciais e pronto!
+
+A partir desse momento, quando você fizer um pull editando algum arquivo do repositório o Jenkins irá startar a pipeline do terraform.
+
+
 
 
 
